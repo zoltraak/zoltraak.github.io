@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <script src="../configs/onlineLib.js"></script>
+    <link rel="stylesheet" href="../configs/login.css">
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <section class="vh-100">
+            <div class="container-fluid h-custom">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-9 col-lg-6 col-xl-0">
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mt-1">
+                            <p class="lead fw-normal mb-0 me-3">Go Home</p>
+                            <a href="../index.html">
+                                <button type="button" class="btn btn-danger btn-floating mx-1">
+                                    <i class="bi bi-arrow-bar-left" style="color: white;"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="divider d-flex align-items-center m-2 w-75">
+                            <p class="text-center fw-bold mx-3 mb-0">Personal Info</p>
+                        </div>
+                        <!-- First Name input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" required />
+                            <label class="form-label" for="birthDate">First Name</label>
+                        </div>
+
+                        <!-- Middle Name input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="text" id="middleName" name="middleName" class="form-control" placeholder="Middle Name" required />
+                            <label class="form-label" for="birthDate">Middle Name</label>
+                        </div>
+
+                        <!-- Last Name input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" required />
+                            <label class="form-label" for="birthDate">Last Name</label>
+                        </div>
+
+                        <!-- Date of Birth input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="date" id="birthDate" name="birthDate" class="form-control" placeholder="Date of Birth" required />
+                            <label class="form-label" for="birthDate">Date of Birth</label>
+                        </div>
+
+                        <!-- Gender input -->
+                        <div class="form-outline m-2 w-75">
+                            <select class="form-select form-control" name="gender" id="gender" required>
+                                <option selected hidden>Select an option</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <label class="form-label" for="birthDate">Gender</label>
+                        </div>
+
+                        <!-- LGBTQ input -->
+                        <div class="form-outline m-2 w-75">
+                            <select class="form-select form-control" name="lgbtq" id="lgbtq" required>
+                                <option selected hidden>Select an option</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label class="form-label" for="birthDate">Part of LGBTQ</label>
+                        </div>
+                    </div>
+                    <!-- SECOND HALF -->
+                    <div class="col-md-9 col-lg-6 col-xl-4 offset-xl-0">
+                        <!-- form start here -->
+                        <div class="divider d-flex align-items-center m-2 w-75">
+                            <p class="text-center fw-bold mx-3 mb-0">Contact Info</p>
+                        </div>
+
+                        <!-- Email input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required />
+                            <label class="form-label" for="email">Email</label>
+                        </div>
+
+                        <!-- Mobile input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="number" id="contactNo" name="contactNo" class="form-control" minlength="11" maxlength="11" placeholder="0900-000-0000" required />
+                            <label class="form-label" for="contactNo">Contact No</label>
+                        </div>
+
+
+                        <div class="divider d-flex align-items-center m-2 w-75">
+                            <p class="text-center fw-bold mx-3 mb-0">Account</p>
+                        </div>
+
+                        <!-- Username input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="text" id="username" name="username" class="form-control" placeholder="example123" required />
+                            <label class="form-label" for="username">Username</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="password" required />
+                            <label class="form-label" for="password">Password</label>
+                        </div>
+
+                        <!-- Confirm Password input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="password" id="cpassword" name="cpassword" class="form-control" placeholder="confirm password" required />
+                            <label class="form-label" for="cpassword">Confirm Password</label>
+                        </div>
+
+                        <!-- Valid Id input -->
+                        <div class="form-outline m-2 w-75">
+                            <input type="file" id="validId" name="image" class="form-control" required />
+                            <label class="form-label" for="validId">Attach valid ID</label>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="text-center text-lg-start mt-4 m-2 pt-2">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" id="register-button">Register</button>
+                        </div>
+
+                        <script>
+                            document.getElementById("register-button").addEventListener("click", function(event) {
+                                var password = document.getElementById("password").value;
+                                var confirmPassword = document.getElementById("cpassword").value;
+
+                                if (password !== confirmPassword) {
+                                    alert("Passwords do not match");
+                                    event.preventDefault();
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
+</html>
